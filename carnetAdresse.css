@@ -1,0 +1,9 @@
+body{
+  width: 50%;
+  background-color: lightgrey;
+}
+
+h1{
+  text-align: center;
+  color: darkred;
+}
