@@ -3,15 +3,12 @@
 // document.body.appendChild(titreListe);
 
 var titre = document.write("<h1>Carnet d'Adresses<h1>")
-// Div liste existante
-// 1 - Affichage de la liste existante
-// Div Ajouter un contact
 
 // Création de la div dans laquelle s'affiche la liste de contacts
 var divListe = document.createElement("div");
   divListe.id = "listeContact";
   divListe.className = "txt";
-  divListe.backgroundColor = "#333333";
+  divListe.backgroundColor = "#999"; // ne marche pas
 document.body.appendChild(divListe);
 var ul = document.createElement("ul");
   ul.className = "txt";
@@ -36,8 +33,16 @@ contactList.push(bob, mary);
 function printPerson(person) {
   var li = document.createElement("li");
     li.className = "txt";
-  ul.appendChild(li);
     li.innerHTML = person.firstName + " " + person.lastName;
+    var imgSuppr = document.createElement("img");
+      imgSuppr.src = "supprimer.png";
+      imgSuppr.width = "15";
+      li.appendChild(imgSuppr);
+    var imgModif = document.createElement("img");
+      imgModif.src = "modifier.png";
+      imgModif.width = "15";
+      li.appendChild(imgModif);
+  ul.appendChild(li);
   console.log(person.firstName + " " + person.lastName);
 };
 
@@ -50,8 +55,25 @@ var list = function() {
 list();
 
 
-// /*Create a search function
-// then call it passing "Jones"*/
+// Fonction de suppression d'un élément de la liste
+
+// Fonction de modification d'un élément de la liste
+
+// Fonction d'affichage complet d'un élément de la liste
+
+// Fonction d'ajout d'un nouvel élément
+var add = function(firstName,lastName,email,phoneNumber) {
+  var newContact = new Object();
+  newContact.firstName = firstName;
+  newContact.lastName = lastName;
+  newContact.email = email;
+  newContact.phoneNumber = phoneNumber;
+  contactList.push(newContact);
+  list();
+};
+add("Isabelle","Leleu", "isolde@toto.com","0123456")
+
+// Fonction de recherche d'un nom dans la liste
 // var search = function(lastName) {
 // 	for (var i = 0; i < contactList.length; i++) {
 // 		if (lastName === contactList[i].lastName) {
@@ -62,13 +84,3 @@ list();
 // };
 // search("Jones");
 //
-// var add = function(firstName,lastName,email,phoneNumber) {
-//   var newContact = new Object();
-//   newContact.firstName = firstName;
-//   newContact.lastName = lastName;
-//   newContact.email = email;
-//   newContact.phoneNumber = phoneNumber;
-//   contactList.push(newContact);
-//   list();
-// };
-// add("Isabelle","Leleu", "isolde@toto.com","0123456")
