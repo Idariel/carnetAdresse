@@ -1,13 +1,26 @@
-body{
-  width: 50%;
-  background-color: lightgrey;
+body {
+  width: 30%;
+  /*background-color: lightgrey;*/
 }
 
-h1{
+h1 {
   text-align: center;
   color: darkred;
+  font-family: sans-serif, arial, helvetica;
 }
 
-p{
+p {
+}
+
+div {
+  border: 2px darkred solid;
+}
+
+.txt {
+  font-family: sans-serif, arial, helvetica;
   color: darkred;
+}
+
+li {
+  font-size: 0.9em;
 }
