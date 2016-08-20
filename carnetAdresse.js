@@ -1,6 +1,8 @@
-// var titreListe = document.createElement("h1");
-//   titreListe.innerHTML = "Carnet d'Adresses";
-// document.body.appendChild(titreListe);
+// Gérer l'événement dans une fenêtre supplémentaire de taille fixe à partir d'une certaine taille d'écran (widthMax = 200, heightMac = 200)
+
+// var titreListe = document.createElement("h1"); // OK
+//   titreListe.innerHTML = "Carnet d'Adresses"; // OK
+// document.body.appendChild(titreListe); // document.body = null ???
 
 var titre = document.write("<h1>Carnet d'Adresses<h1>")
 
@@ -29,7 +31,7 @@ var mary = new newContact ("Mary","Johnson","(650) 888-8888","mary.johnson@examp
 
 contactList.push(bob, mary);
 
-// Création du nom affiché
+// Création du nom affiché et des icones de suppression et de modification
 function printPerson(person) {
   var li = document.createElement("li");
     li.className = "txt";
@@ -62,6 +64,15 @@ list();
 // Fonction d'affichage complet d'un élément de la liste
 
 // Fonction d'ajout d'un nouvel élément
+var divAjout = document.createElement("div");
+  divAjout.id = "nvxContact";
+  divAjout.className = "txt";
+  var p = document.createElement("p");
+  divAjout.appendChild(p);
+  p.innerHTML = "Ajouter un nouveau contact";
+  divAjout.backgroundColor = "#999"; // ne marche pas
+document.body.appendChild(divAjout);
+
 var add = function(firstName,lastName,email,phoneNumber) {
   var newContact = new Object();
   newContact.firstName = firstName;
@@ -69,7 +80,8 @@ var add = function(firstName,lastName,email,phoneNumber) {
   newContact.email = email;
   newContact.phoneNumber = phoneNumber;
   contactList.push(newContact);
-  list();
+  var lastPosition = contactList.length-1
+  printPerson(contactList[lastPosition]);
 };
 add("Isabelle","Leleu", "isolde@toto.com","0123456")
 
