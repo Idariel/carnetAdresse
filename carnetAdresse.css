@@ -24,3 +24,16 @@ div {
 li {
   font-size: 0.9em;
 }
+
+#nvxContact {
+  background-color: darkred;
+  color: white;
+  margin-top: 30px;
+}
+
+p {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
